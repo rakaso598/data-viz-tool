@@ -374,13 +374,13 @@ export default function DataVisualizer({ data, datasetId }) {
   }, [chartType]);
 
   return (
-    <div style={{ width: '100%', maxWidth: '900px', margin: '0 auto', padding: '20px', backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
-      <h2 style={{ textAlign: 'center', color: '#333', marginBottom: '30px' }}>데이터 시각화 설정</h2>
+    <div style={{ width: '100%', maxWidth: '900px', margin: '0 auto', padding: '24px', backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
+      <h2 style={{ textAlign: 'center', color: '#333', marginBottom: '24px', fontWeight: 'bold' }}>데이터 시각화 설정</h2>
 
       {/* --- 데이터 선택 및 차트 유형 --- */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '20px', marginBottom: '30px', paddingBottom: '20px', borderBottom: '1px solid #eee' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '20px', marginBottom: '24px', paddingBottom: '20px', borderBottom: '1px solid #eee' }}>
         <div>
-          <label htmlFor="x-axis-select" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>X축 (라벨):</label>
+          <label htmlFor="x-axis-select" style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>X축 (라벨):</label>
           <select id="x-axis-select" value={xAxisColumn} onChange={handleXAxisColumnChange}
             style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', width: '100%' }}>
             {availableColumns.map(col => <option key={col.name} value={col.name}>{col.name} ({col.type === 'date' ? '날짜' : (col.type === 'numeric' ? '숫자' : '텍스트')})</option>)}
@@ -388,7 +388,7 @@ export default function DataVisualizer({ data, datasetId }) {
         </div>
 
         <div>
-          <label htmlFor="y-axis-select" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Y축 (값):</label>
+          <label htmlFor="y-axis-select" style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>Y축 (값):</label>
           <select id="y-axis-select" value={yAxisColumn} onChange={handleYAxisColumnChange}
             style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', width: '100%' }}>
             {numericColumns.length > 0 ? (
@@ -400,7 +400,7 @@ export default function DataVisualizer({ data, datasetId }) {
         </div>
 
         <div>
-          <label htmlFor="chart-type-select" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>차트 종류:</label>
+          <label htmlFor="chart-type-select" style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>차트 종류:</label>
           <select id="chart-type-select" value={chartType} onChange={handleChartTypeChange}
             style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', width: '100%' }}>
             <option value="bar">막대 차트</option>
@@ -411,32 +411,32 @@ export default function DataVisualizer({ data, datasetId }) {
       </div>
 
       {/* --- 필터링 섹션 --- */}
-      <div style={{ marginBottom: '30px', paddingBottom: '20px', borderBottom: '1px solid #eee' }}>
-        <h3 style={{ marginBottom: '15px', color: '#555' }}>데이터 필터링</h3>
-        <div style={{ display: 'flex', gap: '15px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
+      <div style={{ marginBottom: '24px', paddingBottom: '20px', borderBottom: '1px solid #eee' }}>
+        <h3 style={{ marginBottom: '16px', color: '#555', textAlign: 'center', fontWeight: 'bold' }}>데이터 필터링</h3>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
           <div>
-            <label htmlFor="filter-column-select" style={{ display: 'block', marginBottom: '5px' }}>필터 컬럼:</label>
+            <label htmlFor="filter-column-select" style={{ display: 'block', marginBottom: '8px' }}>필터 컬럼:</label>
             <select id="filter-column-select" value={filterColumn} onChange={handleFilterColumnChange}
               style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '150px' }}>
               {availableColumns.map(col => <option key={col.name} value={col.name}>{col.name}</option>)}
             </select>
           </div>
           <div>
-            <label htmlFor="filter-value-input" style={{ display: 'block', marginBottom: '5px' }}>포함할 값:</label>
+            <label htmlFor="filter-value-input" style={{ display: 'block', marginBottom: '8px' }}>포함할 값:</label>
             <input id="filter-value-input" type="text" value={filterValue} onChange={handleFilterValueChange}
               placeholder="필터링할 값 입력 (대소문자 무시)"
               style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '150px' }} />
           </div>
-          <p style={{ fontSize: '0.85em', color: '#777', flexBasis: '100%', marginTop: '10px' }}>
+          <p style={{ fontSize: '0.85em', color: '#777', flexBasis: '100%', marginTop: '8px' }}>
             <span style={{ fontWeight: 'bold', color: '#007bff' }}>{filteredData.length}</span> / {data.length} 개의 항목이 필터링되었습니다.
           </p>
         </div>
       </div>
 
       {/* --- 그룹화 및 집계 섹션 --- */}
-      <div style={{ marginBottom: '30px', paddingBottom: '20px', borderBottom: '1px solid #eee' }}>
-        <h3 style={{ marginBottom: '15px', color: '#555' }}>데이터 그룹화 및 집계</h3>
-        <div style={{ display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap' }}>
+      <div style={{ marginBottom: '24px', paddingBottom: '20px', borderBottom: '1px solid #eee' }}>
+        <h3 style={{ marginBottom: '16px', color: '#555', textAlign: 'center', fontWeight: 'bold' }}>데이터 그룹화 및 집계</h3>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
           <div>
             <input type="checkbox" id="group-mode-toggle" checked={isGroupedMode} onChange={handleIsGroupedModeChange} />
             <label htmlFor="group-mode-toggle" style={{ marginLeft: '5px', fontWeight: 'bold' }}>그룹화 모드 활성화</label>
@@ -444,7 +444,7 @@ export default function DataVisualizer({ data, datasetId }) {
           {isGroupedMode && chartType !== 'scatter' && (
             <>
               <div>
-                <label htmlFor="group-by-select" style={{ display: 'block', marginBottom: '5px' }}>그룹 기준 컬럼:</label>
+                <label htmlFor="group-by-select" style={{ display: 'block', marginBottom: '8px' }}>그룹 기준 컬럼:</label>
                 <select id="group-by-select" value={groupByColumn} onChange={handleGroupByColumnChange}
                   style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '150px' }}>
                   {categoricalColumns.length > 0 ? (
@@ -455,7 +455,7 @@ export default function DataVisualizer({ data, datasetId }) {
                 </select>
               </div>
               <div>
-                <label htmlFor="aggregate-type-select" style={{ display: 'block', marginBottom: '5px' }}>집계 유형:</label>
+                <label htmlFor="aggregate-type-select" style={{ display: 'block', marginBottom: '8px' }}>집계 유형:</label>
                 <select id="aggregate-type-select" value={aggregateType} onChange={handleAggregateTypeChange}
                   style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '100px' }}>
                   <option value="sum">합계</option>
@@ -463,7 +463,7 @@ export default function DataVisualizer({ data, datasetId }) {
                   <option value="count">개수</option>
                 </select>
               </div>
-              <p style={{ fontSize: '0.85em', color: '#777', flexBasis: '100%', marginTop: '10px' }}>
+              <p style={{ fontSize: '0.85em', color: '#777', flexBasis: '100%', marginTop: '8px' }}>
                 그룹화 모드는 Y축 컬럼이 숫자 타입일 때만 작동합니다. 산점도에서는 그룹화가 비활성화됩니다.
               </p>
             </>
@@ -473,35 +473,35 @@ export default function DataVisualizer({ data, datasetId }) {
 
 
       {/* --- 차트 커스터마이징 --- */}
-      <div style={{ marginBottom: '30px', paddingBottom: '20px', borderBottom: '1px solid #eee' }}>
-        <h3 style={{ marginBottom: '15px', color: '#555' }}>차트 커스터마이징</h3>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px' }}>
+      <div style={{ marginBottom: '24px', paddingBottom: '20px', borderBottom: '1px solid #eee' }}>
+        <h3 style={{ marginBottom: '16px', color: '#555', textAlign: 'center', fontWeight: 'bold' }}>차트 커스터마이징</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
           <div>
-            <label htmlFor="custom-title-input" style={{ display: 'block', marginBottom: '5px' }}>차트 제목:</label>
+            <label htmlFor="custom-title-input" style={{ display: 'block', marginBottom: '8px' }}>차트 제목:</label>
             <input id="custom-title-input" type="text" value={customTitle} onChange={handleCustomTitleChange}
               placeholder="사용자 정의 차트 제목"
               style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', width: '100%' }} />
           </div>
           <div>
-            <label htmlFor="custom-xaxis-title-input" style={{ display: 'block', marginBottom: '5px' }}>X축 제목:</label>
+            <label htmlFor="custom-xaxis-title-input" style={{ display: 'block', marginBottom: '8px' }}>X축 제목:</label>
             <input id="custom-xaxis-title-input" type="text" value={customXAxisTitle} onChange={handleCustomXAxisTitleChange}
               placeholder="사용자 정의 X축 제목"
               style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', width: '100%' }} />
           </div>
           <div>
-            <label htmlFor="custom-yaxis-title-input" style={{ display: 'block', marginBottom: '5px' }}>Y축 제목:</label>
+            <label htmlFor="custom-yaxis-title-input" style={{ display: 'block', marginBottom: '8px' }}>Y축 제목:</label>
             <input id="custom-yaxis-title-input" type="text" value={customYAxisTitle} onChange={handleCustomYAxisTitleChange}
               placeholder="사용자 정의 Y축 제목"
               style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', width: '100%' }} />
           </div>
           <div>
-            <label htmlFor="chart-color-picker" style={{ display: 'block', marginBottom: '5px' }}>차트 색상:</label>
+            <label htmlFor="chart-color-picker" style={{ display: 'block', marginBottom: '8px' }}>차트 색상:</label>
             <input id="chart-color-picker" type="color" value={chartColor} onChange={handleChartColorChange}
               style={{ width: '100%', height: '40px', border: 'none', padding: 0, borderRadius: '4px', cursor: 'pointer' }} />
           </div>
           {chartType !== 'scatter' && ( // 산점도는 데이터 라벨이 기본적으로 없음
             <div>
-              <label htmlFor="show-data-labels-checkbox" style={{ display: 'block', marginBottom: '5px' }}>
+              <label htmlFor="show-data-labels-checkbox" style={{ display: 'block', marginBottom: '8px' }}>
                 <input type="checkbox" id="show-data-labels-checkbox" checked={showDataLabels} onChange={handleShowDataLabelsChange} />
                 데이터 라벨 표시
               </label>
@@ -512,7 +512,7 @@ export default function DataVisualizer({ data, datasetId }) {
 
       {/* --- 차트 렌더링 영역 --- */}
       {chartData && chartOptions && yAxisColumn ? (
-        <div style={{ height: '400px', marginBottom: '30px' }}>
+        <div style={{ height: '400px', marginBottom: '32px' }}> {/* 차트 영역 아래 마진 조정 */}
           <ChartComponent data={chartData} options={chartOptions} plugins={[ChartDataLabels]} />
         </div>
       ) : (
@@ -525,8 +525,8 @@ export default function DataVisualizer({ data, datasetId }) {
 
       {/* --- 통계 정보 표시 --- */}
       {stats && chartType !== 'scatter' && (
-        <div style={{ marginTop: '30px', padding: '20px', borderTop: '1px solid #eee', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
-          <h3 style={{ marginBottom: '15px', color: '#555' }}>선택된 '{yAxisColumn}' 컬럼 통계</h3>
+        <div style={{ marginTop: '32px', padding: '20px', borderTop: '1px solid #eee', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
+          <h3 style={{ marginBottom: '16px', color: '#555' }}>선택된 '{yAxisColumn}' 컬럼 통계</h3>
           <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
             <li><strong>총합:</strong> {stats.sum !== null ? stats.sum.toLocaleString() : 'N/A'}</li>
             <li><strong>평균:</strong> {stats.mean !== null ? stats.mean.toLocaleString(undefined, { maximumFractionDigits: 2 }) : 'N/A'}</li>
@@ -540,21 +540,21 @@ export default function DataVisualizer({ data, datasetId }) {
 
       {/* --- 상관계수 표시 (산점도 선택 시) --- */}
       {chartType === 'scatter' && correlation !== null && (
-        <div style={{ marginTop: '30px', padding: '20px', borderTop: '1px solid #eee', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
-          <h3 style={{ marginBottom: '15px', color: '#555' }}>상관계수 ({xAxisColumn} vs {yAxisColumn})</h3>
+        <div style={{ marginTop: '32px', padding: '20px', borderTop: '1px solid #eee', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
+          <h3 style={{ marginBottom: '16px', color: '#555' }}>상관계수 ({xAxisColumn} vs {yAxisColumn})</h3>
           <p style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#007bff' }}>
             {correlation.toLocaleString(undefined, { maximumFractionDigits: 4 })}
             <span style={{ fontSize: '0.8em', fontWeight: 'normal', marginLeft: '10px' }}>
               ({correlation > 0.7 ? '강한 양의 상관관계' : correlation < -0.7 ? '강한 음의 상관관계' : correlation > 0.3 ? '약한 양의 상관관계' : correlation < -0.3 ? '약한 음의 상관관계' : '매우 약한 상관관계'})
             </span>
           </p>
-          <p style={{ fontSize: '0.9em', color: '#777', marginTop: '10px' }}>
+          <p style={{ fontSize: '0.9em', color: '#777', marginTop: '8px' }}>
             * 상관계수는 두 변수 간의 선형 관계 강도를 나타냅니다. 1에 가까울수록 강한 양의 관계, -1에 가까울수록 강한 음의 관계, 0에 가까울수록 관계가 약합니다.
           </p>
         </div>
       )}
 
-      <p style={{ marginTop: '50px', borderTop: '1px solid #eee', paddingTop: '20px', fontSize: '0.9em', color: '#666', textAlign: 'center' }}>
+      <p style={{ marginTop: '40px', borderTop: '1px solid #eee', paddingTop: '20px', fontSize: '0.7em', color: '#666', textAlign: 'center' }}>
         이 서비스는 사용자의 데이터를 서버나 데이터베이스에 저장하지 않습니다. 모든 데이터 처리 및 저장은 사용자의 브라우저 로컬 스토리지에서 이루어집니다.
         <br />
         <span style={{ fontWeight: 'bold' }}>보안 참고:</span> 업로드된 데이터는 JSON 객체로 파싱되어 차트 라이브러리에 전달됩니다. 직접적인 스크립트 실행 위험은 낮으나, 사용자 입력 필드에 악성 코드가 삽입되는 것을 방지하기 위한 추가적인 클라이언트 측 검증이 권장됩니다.

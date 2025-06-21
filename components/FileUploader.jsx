@@ -67,7 +67,7 @@ export default function FileUploader({ onDataParsed }) {
   }, [onDataParsed]);
 
   return (
-    <div style={{ marginBottom: '20px', padding: '15px', border: '1px dashed #ccc', borderRadius: '8px', textAlign: 'center' }}>
+    <div style={{ marginBottom: '20px', padding: '15px', border: '2px dashed #ccc', borderRadius: '8px', textAlign: 'center' }}>
       <label htmlFor="file-upload" style={{ display: 'block', marginBottom: '10px', fontSize: '1.1em', fontWeight: 'bold' }}>
         데이터 파일 업로드
       </label>
@@ -76,9 +76,9 @@ export default function FileUploader({ onDataParsed }) {
         type="file"
         accept=".csv, .xlsx, .xls"
         onChange={handleFileChange}
-        style={{ padding: '8px', border: '1px solid #ddd', borderRadius: '4px' }}
+        style={{ padding: '8px', border: '2px solid #666', borderRadius: '4px' }}
       />
-      <p style={{ marginTop: '10px', color: '#666' }}>CSV 또는 XLSX 파일을 선택해주세요.</p>
+      <p style={{ marginTop: '10px', color: '#666' }}>위 버튼을 클릭하여 CSV 또는 XLSX 파일을 선택해주세요.</p>
     </div>
   );
 }

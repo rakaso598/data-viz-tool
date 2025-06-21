@@ -69,7 +69,7 @@ export default function HomePage() {
 
   return (
     <div style={{ fontFamily: 'Inter, sans-serif', maxWidth: '1200px', margin: '50px auto', padding: '30px', backgroundColor: '#e9eff6', borderRadius: '12px', boxShadow: '0 8px 20px rgba(0,0,0,0.1)' }}>
-      <h1 style={{ textAlign: 'center', color: '#2c3e50', marginBottom: '40px', fontSize: '2.5em' }}>데이터 시각화 대시보드</h1>
+      <h1 style={{ textAlign: 'center', color: '#2c3e50', marginBottom: '40px', fontSize: '2.5em', fontWeight: 'bold' }}>데이터 시각화 대시보드</h1>
 
       <FileUploader onDataParsed={handleDataParsed} />
 
@@ -122,10 +122,10 @@ export default function HomePage() {
         </p>
       )}
 
-      <div style={{ marginTop: '50px', borderTop: '1px solid #ecf0f1', paddingTop: '20px', fontSize: '0.9em', color: '#666', textAlign: 'center' }}>
+      <div style={{ marginTop: '0px', borderTop: '1px solid #ecf0f1', paddingTop: '20px', fontSize: '0.8em', color: '#666', textAlign: 'center' }}>
         <p>
           <span style={{ fontWeight: 'bold', color: '#e67e22' }}>데이터 프라이버시 알림:</span> 이 서비스는 사용자의 데이터를 서버나 데이터베이스에 저장하지 않습니다.
-          <br />모든 데이터 처리 및 저장은 **사용자의 브라우저 로컬 스토리지**에서 이루어집니다.
+          <br />모든 데이터 처리 및 저장은 사용자의 브라우저 로컬 스토리지에서 이루어집니다.
           <br />(브라우저 캐시를 지우거나, 다른 브라우저/기기를 사용하면 데이터가 사라질 수 있습니다.)
         </p>
         <p style={{ fontSize: '0.8em', color: '#95a5a6', marginTop: '10px' }}>
