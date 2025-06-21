@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+data-viz-tool/
+├── public/
+├── app/
+│   ├── layout.js       # 전체 레이아웃
+│   ├── page.js         # 메인 페이지 컴포넌트 (데이터셋 관리, 로드 등)
+│   └── globals.css     # 전역 CSS
+├── components/
+│   ├── FileUploader.js     # 파일 업로드
+│   └── DataVisualizer.js   # 핵심 시각화 및 설정 UI
+├── lib/
+│   ├── dataUtils.js        # 데이터 처리, 통계, 그룹화 로직
+│   └── localStorageUtils.js # 로컬 스토리지 데이터셋 및 설정 관리
+├── package.json
+└── next.config.js
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-----
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## v1
+프로젝트 실행 및 테스트 방법
+모든 파일 교체 및 생성: 위에 제공된 모든 코드를 해당 경로의 파일에 정확히 복사하여 붙여넣거나 새 파일을 생성합니다.
+라이브러리 설치 확인: 프로젝트 루트 디렉토리에서 npm install 명령어를 다시 실행하여 모든 라이브러리가 제대로 설치되었는지 확인합니다. (특히 simple-statistics, lodash, chartjs-plugin-datalabels가 추가되었는지)
+개발 서버 실행: npm run dev 명령어로 Next.js 개발 서버를 실행합니다.
+접속 및 테스트: http://localhost:3000에 접속하여 다음을 테스트합니다.
+sales_data.csv 또는 employee_performance.csv 파일을 업로드합니다.
+업로드 후 '저장된 데이터셋' 목록에 파일이 추가되고 자동으로 로드되는지 확인합니다.
+X축, Y축, 차트 종류를 바꿔보며 시각화가 잘 되는지 확인합니다.
+'Date' 컬럼을 X축으로, 'SalesAmount'를 Y축으로 선택하고 '선 차트'로 변경하여 날짜별 추이가 잘 나오는지 확인합니다.
+'데이터 필터링' 섹션에서 'Product' 컬럼을 선택하고 'Laptop'을 입력하여 필터링이 되는지 확인합니다.
+'데이터 그룹화' 섹션에서 체크박스를 활성화하고 'Product' (그룹 기준), 'SalesAmount' (Y축 값), '합계' (집계 유형)를 선택하여 제품별 총 매출이 막대 차트로 표시되는지 확인합니다.
+'차트 커스터마이징' 섹션에서 차트 제목, 축 제목, 색상, 데이터 라벨 표시 등을 바꿔보며 적용되는지 확인합니다.
+두 개의 숫자 컬럼 (예: employee_performance.csv에서 'PerformanceScore'와 'Salary(USD)')을 X, Y축으로 선택하고 차트 종류를 '산점도'로 변경하여 산점도가 그려지고 상관계수가 표시되는지 확인합니다.
+페이지를 새로고침하거나 브라우저를 닫았다가 다시 열었을 때, 로컬 스토리지에 저장된 데이터셋 목록과 마지막으로 선택했던 차트 설정이 유지되는지 확인합니다.
+데이터셋 삭제 버튼을 눌러 목록에서 제거되는지 확인합니다.
+이 정도면 사용자가 로컬 환경에서 데이터를 안전하게 탐색하고 시각화하며 다양한 커스터마이징까지 할 수 있는 매우 강력한 "일상적인 시각화 도구"가 될 것입니다. 보안 관련해서는 현재 구조에서 클라이언트 측 데이터 처리가 주를 이루므로 직접적인 스크립트 삽입 위험은 낮지만, 항상 사용자 입력에 대한 검증과 출력 시 이스케이프 처리는 기본적인 원칙으로 염두에 두어야 합니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-----
