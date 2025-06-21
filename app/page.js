@@ -1,103 +1,69 @@
-import Image from "next/image";
+// app/page.js
+'use client'; // 클라이언트 컴포넌트로 지정
 
-export default function Home() {
+import { useState, useEffect, useCallback } from 'react';
+import FileUploader from '@/components/FileUploader';
+import DataVisualizer from '@/components/DataVisualizer';
+import { saveDataToLocalStorage, loadDataFromLocalStorage, clearDataFromLocalStorage } from '@/lib/dataStorage';
+
+export default function HomePage() {
+  const [uploadedData, setUploadedData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // 컴포넌트 마운트 시 로컬 스토리지에서 데이터 로드 시도
+  useEffect(() => {
+    const storedData = loadDataFromLocalStorage();
+    if (storedData) {
+      setUploadedData(storedData);
+    }
+    setLoading(false);
+  }, []);
+
+  // 파일 업로드 및 파싱 완료 시 호출될 콜백 함수
+  const handleDataParsed = useCallback((data) => {
+    setUploadedData(data);
+    saveDataToLocalStorage(data); // 파싱된 데이터를 로컬 스토리지에 저장
+  }, []);
+
+  // 로컬 스토리지 데이터 삭제
+  const handleClearData = useCallback(() => {
+    clearDataFromLocalStorage();
+    setUploadedData(null);
+    alert("저장된 데이터가 삭제되었습니다.");
+  }, []);
+
+  if (loading) {
+    return <p>데이터를 로딩 중입니다...</p>;
+  }
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div style={{ fontFamily: 'Arial, sans-serif', maxWidth: '1000px', margin: '50px auto', padding: '20px', border: '1px solid #ddd', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+      <h1 style={{ textAlign: 'center', color: '#333' }}>데이터 시각화 도구 (데이터 비저장)</h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <FileUploader onDataParsed={handleDataParsed} />
+
+      {uploadedData && (
+        <div style={{ marginTop: '30px' }}>
+          <h2 style={{ color: '#555' }}>시각화 결과</h2>
+          <DataVisualizer data={uploadedData} />
+          <div style={{ textAlign: 'center', marginTop: '20px' }}>
+            <button
+              onClick={handleClearData}
+              style={{ padding: '10px 20px', backgroundColor: '#dc3545', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+            >
+              현재 데이터 삭제 (로컬 스토리지에서)
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      )}
+
+      {!uploadedData && !loading && (
+        <p style={{ textAlign: 'center', color: '#777' }}>파일을 업로드하면 여기에 데이터가 시각화됩니다.</p>
+      )}
+
+      <div style={{ marginTop: '50px', borderTop: '1px solid #eee', paddingTop: '20px', fontSize: '0.9em', color: '#666' }}>
+        <p>참고: 이 서비스는 사용자의 데이터를 서버나 데이터베이스에 저장하지 않습니다. 모든 데이터 처리 및 저장은 사용자의 브라우저 로컬 스토리지에서 이루어집니다. 브라우저 캐시를 지우거나, 다른 브라우저/기기를 사용하면 데이터가 사라질 수 있습니다.</p>
+      </div>
     </div>
   );
 }
