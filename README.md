@@ -1,12 +1,14 @@
-# 데이터 시각화 대시보드 사이트
+# 📊 [데이터 시각화 대시보드 사이트](https://data-viz-tool-kappa.vercel.app/)
 
 ![Animation_csv_1](https://github.com/user-attachments/assets/de972f71-2129-4383-bfc1-5a3067abb6e4)
 
 ## 프로젝트 소개
 
 이 프로젝트는 사용자가 자신의 CSV 또는 XLSX 파일을 브라우저에 직접 업로드하여 인터랙티브하게 데이터를 탐색하고 시각화할 수 있도록 돕는 오프라인 우선(Offline-first) 데이터 시각화 대시보드입니다.  
-서버와의 통신 없이 모든 데이터 처리가 클라이언트(브라우저)에서 이루어지므로, 데이터를 빠르게 간이 분석해보고 싶은 사용자에게 최적화되어 있습니다. 직관적인 UI를 통해 복잡한 코드 없이도 데이터를 쉽게 이해하고 인사이트를 얻을 수 있습니다.
-아래 드롭다운에는 시연 이미지들이 정리되어 있습니다.
+
+서버와의 통신 없이 모든 데이터 처리가 클라이언트(브라우저)에서 이루어지므로, 데이터를 빠르게 간이 분석해보고 싶은 사용자에게 최적화되어 있습니다. 직관적인 UI를 통해 복잡한 코드 없이도 데이터를 쉽게 이해하고 인사이트를 얻을 수 있습니다.  
+
+아래 드롭다운에는 시연 이미지들이 정리되어 있습니다.  
 
 <details>
 <summary>접속 화면</summary>
@@ -48,6 +50,43 @@
 <summary>산점도 결과</summary>
 
 ![image](https://github.com/user-attachments/assets/205c57e5-aa7f-4165-b2ce-6c397bc69530)
+
+</details>
+
+**또한, 테스트를 위한 예제 CSV 데이터를 제공합니다.**
+
+<details>
+<summary>sales_data.csv</summary>
+
+```
+Date,Product,Region,SalesAmount,UnitsSold
+2024-01-01,Laptop,North,1200000,10
+2024-01-01,Mouse,North,25000,100
+2024-01-02,Keyboard,South,50000,50
+2024-01-02,Monitor,East,300000,5
+2024-01-03,Laptop,West,1500000,12
+2024-01-03,Mouse,South,28000,110
+2024-01-04,Keyboard,East,55000,60
+2024-01-04,Monitor,North,320000,6
+2024-01-05,Laptop,South,1300000,11
+2024-01-05,Mouse,West,27000,105
+```
+
+</details>
+
+<details>
+<summary>employee_performance.csv</summary>
+
+```
+EmployeeID,Name,Department,PerformanceScore,YearsOfService,ProjectCount,Salary(USD)
+EMP001,Alice,Marketing,85,5,3,60000
+EMP002,Bob,Sales,92,7,5,75000
+EMP003,Charlie,HR,78,3,2,50000
+EMP004,David,Engineering,95,10,8,90000
+EMP005,Eve,Marketing,88,6,4,65000
+EMP006,Frank,Sales,89,4,3,68000
+EMP007,Grace,Engineering,91,8,6,82000
+```
 
 </details>
 
@@ -119,43 +158,6 @@ data-viz-tool/
 8.  **산점도 및 상관계수:** 두 개의 숫자 컬럼 (예: `employee_performance.csv`에서 'PerformanceScore'와 'Salary(USD)')을 X, Y축으로 선택하고 차트 종류를 '산점도'로 변경하여 산점도가 그려지고 상관계수 값이 표시되는지 확인합니다.
 9.  **데이터 영속성:** 페이지를 새로고침하거나 브라우저를 닫았다가 다시 열었을 때, 로컬 스토리지에 저장된 데이터셋 목록과 마지막으로 선택했던 차트 설정이 그대로 유지되는지 확인합니다.
 10. **데이터셋 삭제:** '저장된 데이터셋' 옆의 삭제 버튼을 눌러 목록에서 데이터셋이 올바르게 제거되는지 확인합니다.
-
-## 테스트용 CSV 파일
-
-<details>
-<summary>sales_data.csv</summary>
-
-```
-Date,Product,Region,SalesAmount,UnitsSold
-2024-01-01,Laptop,North,1200000,10
-2024-01-01,Mouse,North,25000,100
-2024-01-02,Keyboard,South,50000,50
-2024-01-02,Monitor,East,300000,5
-2024-01-03,Laptop,West,1500000,12
-2024-01-03,Mouse,South,28000,110
-2024-01-04,Keyboard,East,55000,60
-2024-01-04,Monitor,North,320000,6
-2024-01-05,Laptop,South,1300000,11
-2024-01-05,Mouse,West,27000,105
-```
-
-</details>
-
-<details>
-<summary>employee_performance.csv</summary>
-
-```
-EmployeeID,Name,Department,PerformanceScore,YearsOfService,ProjectCount,Salary(USD)
-EMP001,Alice,Marketing,85,5,3,60000
-EMP002,Bob,Sales,92,7,5,75000
-EMP003,Charlie,HR,78,3,2,50000
-EMP004,David,Engineering,95,10,8,90000
-EMP005,Eve,Marketing,88,6,4,65000
-EMP006,Frank,Sales,89,4,3,68000
-EMP007,Grace,Engineering,91,8,6,82000
-```
-
-</details>
 
 ## 보안 및 데이터 프라이버시 참고
 
