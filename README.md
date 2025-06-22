@@ -91,7 +91,6 @@ EMP007,Grace,Engineering,91,8,6,82000
 </details>
 
 ## 기술 스택
-
 #### *프론트엔드 프레임워크*
 ![](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 #### *데이터 시각화*
@@ -99,7 +98,7 @@ EMP007,Grace,Engineering,91,8,6,82000
 #### *데이터 파싱*
 ![](https://img.shields.io/badge/PapaParse-F0F0F0?style=for-the-badge&logoColor=black) ![](https://img.shields.io/badge/XLSX-F0F0F0?style=for-the-badge&logoColor=black)
 #### *데이터 처리 및 통계*
-![](https://img.shields.io/badge/Simple--Statistics-F0F0F0?style=for-the-badge&logoColor=black) ![](https://img.shields.io/badge/Lodash-334052?style=for-the-badge&logo=lodash&logoColor=white), ![](https://img.shields.io/badge/Date--Fns-F0F0F0?style=for-the-badge&logoColor=black)
+![](https://img.shields.io/badge/Simple--Statistics-F0F0F0?style=for-the-badge&logoColor=black) ![](https://img.shields.io/badge/Lodash-334052?style=for-the-badge&logo=lodash&logoColor=white) ![](https://img.shields.io/badge/Date--Fns-F0F0F0?style=for-the-badge&logoColor=black)
 #### *데이터 저장*
 ![](https://img.shields.io/badge/localStorage%20API-F0F0F0?style=for-the-badge&logoColor=black)
 #### *스타일링*
