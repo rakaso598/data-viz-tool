@@ -90,6 +90,15 @@ EMP007,Grace,Engineering,91,8,6,82000
 
 </details>
 
+## 기술 스택
+
+* **프론트엔드 프레임워크:** ![](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white), ![](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+* **데이터 시각화:** ![](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chart.js&logoColor=white), ![](https://img.shields.io/badge/React--Chartjs--2-61DAFB?style=for-the-badge&logo=react&logoColor=black), ![](https://img.shields.io/badge/Chartjs--Adapter--Date--Fns-F0F0F0?style=for-the-badge&logoColor=black), ![](https://img.shields.io/badge/Chartjs--Plugin--Datalabels-F0F0F0?style=for-the-badge&logoColor=black)
+* **데이터 파싱:** ![](https://img.shields.io/badge/PapaParse-F0F0F0?style=for-the-badge&logoColor=black), ![](https://img.shields.io/badge/XLSX-F0F0F0?style=for-the-badge&logoColor=black)
+* **데이터 처리 및 통계:** ![](https://img.shields.io/badge/Simple--Statistics-F0F0F0?style=for-the-badge&logoColor=black), ![](https://img.shields.io/badge/Lodash-334052?style=for-the-badge&logo=lodash&logoColor=white), ![](https://img.shields.io/badge/Date--Fns-F0F0F0?style=for-the-badge&logoColor=black)
+* **데이터 저장:** ![](https://img.shields.io/badge/localStorage%20API-F0F0F0?style=for-the-badge&logoColor=black)
+* **스타일링:** ![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
 ## 주요 기능
 
 * **데이터 업로드:** CSV 및 XLSX 파일 형식을 지원하며, 업로드된 데이터는 로컬 스토리지에 저장되어 브라우저를 닫아도 유지됩니다.
@@ -101,15 +110,6 @@ EMP007,Grace,Engineering,91,8,6,82000
 * **실시간 통계 분석:** 선택된 Y축 컬럼에 대한 총합, 평균, 중앙값, 최댓값, 최솟값, 표준편차 등 핵심 통계 정보를 즉시 확인할 수 있습니다.
 * **상관계수 분석:** 산점도에서는 두 숫자 컬럼 간의 **상관계수**를 계산하고, 그 관계의 강도와 방향을 직관적으로 해석해 줍니다.
 * **로컬 스토리지 기반 영속성:** 업로드된 데이터셋 목록과 마지막으로 설정했던 차트 옵션이 사용자의 브라우저 로컬 스토리지에 저장되어, 페이지를 새로고침하거나 다시 접속해도 이전 작업이 유지됩니다.
-
-## 기술 스택
-
-* **프론트엔드 프레임워크:** Next.js (React.js 기반)
-* **데이터 시각화:** Chart.js (핵심 차트 라이브러리), React-Chartjs-2 (React 연동), Chartjs-Adapter-Date-Fns (날짜 처리), Chartjs-Plugin-Datalabels (데이터 라벨 플러그인)
-* **데이터 파싱:** PapaParse (CSV), XLSX (Excel)
-* **데이터 처리 및 통계:** Simple-Statistics (수학 및 통계 함수), Lodash (유틸리티 함수), Date-Fns (날짜 유틸리티)
-* **데이터 저장:** 웹 브라우저 `localStorage` API
-* **스타일링:** 순수 CSS (인라인 스타일 및 전역 CSS)
 
 ## 프로젝트 구조
 
