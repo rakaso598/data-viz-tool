@@ -92,12 +92,18 @@ EMP007,Grace,Engineering,91,8,6,82000
 
 ## 기술 스택
 
-* **프론트엔드 프레임워크:** ![](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white), ![](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-* **데이터 시각화:** ![](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chart.js&logoColor=white), ![](https://img.shields.io/badge/React--Chartjs--2-61DAFB?style=for-the-badge&logo=react&logoColor=black), ![](https://img.shields.io/badge/Chartjs--Adapter--Date--Fns-F0F0F0?style=for-the-badge&logoColor=black), ![](https://img.shields.io/badge/Chartjs--Plugin--Datalabels-F0F0F0?style=for-the-badge&logoColor=black)
-* **데이터 파싱:** ![](https://img.shields.io/badge/PapaParse-F0F0F0?style=for-the-badge&logoColor=black), ![](https://img.shields.io/badge/XLSX-F0F0F0?style=for-the-badge&logoColor=black)
-* **데이터 처리 및 통계:** ![](https://img.shields.io/badge/Simple--Statistics-F0F0F0?style=for-the-badge&logoColor=black), ![](https://img.shields.io/badge/Lodash-334052?style=for-the-badge&logo=lodash&logoColor=white), ![](https://img.shields.io/badge/Date--Fns-F0F0F0?style=for-the-badge&logoColor=black)
-* **데이터 저장:** ![](https://img.shields.io/badge/localStorage%20API-F0F0F0?style=for-the-badge&logoColor=black)
-* **스타일링:** ![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+#### *프론트엔드 프레임워크*
+![](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+#### *데이터 시각화*
+![](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chart.js&logoColor=white) ![](https://img.shields.io/badge/React--Chartjs--2-61DAFB?style=for-the-badge&logo=react&logoColor=black) ![](https://img.shields.io/badge/Chartjs--Adapter--Date--Fns-F0F0F0?style=for-the-badge&logoColor=black) ![](https://img.shields.io/badge/Chartjs--Plugin--Datalabels-F0F0F0?style=for-the-badge&logoColor=black)
+#### *데이터 파싱*
+![](https://img.shields.io/badge/PapaParse-F0F0F0?style=for-the-badge&logoColor=black) ![](https://img.shields.io/badge/XLSX-F0F0F0?style=for-the-badge&logoColor=black)
+#### *데이터 처리 및 통계*
+![](https://img.shields.io/badge/Simple--Statistics-F0F0F0?style=for-the-badge&logoColor=black) ![](https://img.shields.io/badge/Lodash-334052?style=for-the-badge&logo=lodash&logoColor=white), ![](https://img.shields.io/badge/Date--Fns-F0F0F0?style=for-the-badge&logoColor=black)
+#### *데이터 저장*
+![](https://img.shields.io/badge/localStorage%20API-F0F0F0?style=for-the-badge&logoColor=black)
+#### *스타일링*
+![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 ## 주요 기능
 
